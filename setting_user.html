@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <body>
+    <div id="setting_user">
+      <table>
+      <thread>
+        <tr>
+          <th>ユーザー名</th>
+          <th>LINE_ID</th>
+          <th>Slack_ID</th>
+          <th>有効期間（開始）</th>
+          <th>有効期間（終了）</th>
+        </tr>
+      </thread>
+        <tbody id="user-table-body">
+      <tr>
+        <td><input type="text" name="username" value="山田太郎"></td>
+        <td><input type="text" name="line_id" value="yamada123"></td>
+        <td><input type="text" name="slack_id" value="yamada123"></td>
+        <td><input type="date" name="valid_from" value="2025-06-01"></td>
+        <td><input type="date" name="valid_to" value="2025-12-31"></td>
+        <td>
+          <button name="remove_button">削除</button>
+        </td>
+      </tr>
+    </tbody>
+      </table>
+    </div>
+
+    <button id="addBtn">追加</button>
+    
+    <div class="btn">
+      <button id="reset_button">リセット</button>
+      <button id="apply_button">適用</button>
+    </div>
+    <script src="setting_user.js"></script>
+  </body>
