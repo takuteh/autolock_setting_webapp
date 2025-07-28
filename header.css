@@ -1,0 +1,31 @@
+header {
+  background-color: white;
+  color: black;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc; /* 下線を追加 */
+}
+
+.header-logo img {
+  height: 40px; /* ロゴ画像の高さ調整 */
+}
+.header-nav {
+  list-style: none; /*リストの丸を消す*/
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav li a {
+  color: black;
+  text-decoration: none; /*リンクの下線を消す*/
+  font-weight: bold;
+  transition: color 0.3s; /*hover時の色変化までの秒数*/
+}
+
+.header-nav li a:hover {
+  color: #00bfff;
+}

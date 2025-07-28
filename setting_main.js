@@ -13,12 +13,18 @@ apply.addEventListener("click", async () => {
       rotate_direction: document.querySelector("#rotate_direction select")
         .value,
       ignore_clsw: document.querySelector("#ignore_clsw select").value,
+      authorize_external_users: document.querySelector(
+        "#authorize_external_users select"
+      ).value,
+      authorize_internal_users: document.querySelector(
+        "#authorize_internal_users select"
+      ).value,
     };
     console.log(new_settings);
 
     try {
       const response = await fetch(
-        "https://margarita.shacknet.us/cgi/save_data.php",
+        "https://margarita.shacknet.us/takumi_test/235/webapp/post",
         {
           method: "POST",
           headers: {
@@ -41,43 +47,64 @@ apply.addEventListener("click", async () => {
   }
 });
 
-async function test() {
+async function get_current_setting() {
   try {
-    const response = await fetch("http://10.0.0.235:3000/webapp/get");
+    const response = await fetch(
+      "https://margarita.shacknet.us/takumi_test/235/webapp/get"
+    );
     const data = await response.json();
-    const test = document.getElementById("test");
-    test.innerText = "test"; //data;
     console.log(data);
 
-    // //autolock
-    // const autolock_set = document.getElementById("autolock");
-    // const autolock_select = autolock_set.getElementsByTagName("select")[0];
-    // if (data.autolock) {
-    //   autolock_select.value = data.autolock;
-    // }
+    //autolock
+    const autolock_set = document.getElementById("autolock");
+    const autolock_select = autolock_set.getElementsByTagName("select")[0];
+    if (data.main.autolock != null) {
+      autolock_select.value = String(data.main.autolock);
+    }
 
-    // //timeout_seq
-    // const timeout_seq_set = document.getElementById("timeout_seq");
-    // const timeout_seq_select = timeout_seq_set.getElementsByTagName("input")[0];
-    // if (data.timeout_seq) {
-    //   timeout_seq_select.value = data.timeout_seq;
-    // }
+    //timeout_seq
+    const timeout_seq_set = document.getElementById("timeout_seq");
+    const timeout_seq_select = timeout_seq_set.getElementsByTagName("input")[0];
+    if (data.main.timeout_seq != null) {
+      timeout_seq_select.value = data.main.timeout_seq;
+    }
 
-    // const rotate_direction_set = document.getElementById("rotate_direction");
-    // const rotate_direction_select =
-    //   rotate_direction_set.getElementsByTagName("select")[0];
-    // if (data.rotate_direction) {
-    //   rotate_direction_select.value = data.rotate_direction;
-    // }
+    const rotate_direction_set = document.getElementById("rotate_direction");
+    const rotate_direction_select =
+      rotate_direction_set.getElementsByTagName("select")[0];
+    if (data.main.rotate_direction != null) {
+      rotate_direction_select.value = data.main.rotate_direction;
+    }
 
-    // const ignore_clsw_set = document.getElementById("ignore_clsw");
-    // const ignore_clsw_select =
-    //   ignore_clsw_set.getElementsByTagName("select")[0];
-    // if (data.ignore_clsw) {
-    //   ignore_clsw_select.value = data.ignore_clsw;
-    // }
+    const ignore_clsw_set = document.getElementById("ignore_clsw");
+    const ignore_clsw_select =
+      ignore_clsw_set.getElementsByTagName("select")[0];
+    if (data.main.ignore_clsw != null) {
+      ignore_clsw_select.value = data.main.ignore_clsw;
+    }
+
+    const authorize_external_users_set = document.getElementById(
+      "authorize_external_users"
+    );
+    const authorize_external_users_select =
+      authorize_external_users_set.getElementsByTagName("select")[0];
+    if (data.main.authorize_external_users != null) {
+      authorize_external_users_select.value =
+        data.main.authorize_external_users;
+    }
+
+    const authorize_internal_users_set = document.getElementById(
+      "authorize_internal_users"
+    );
+    const authorize_internal_users_select =
+      authorize_internal_users_set.getElementsByTagName("select")[0];
+    if (data.main.authorize_internal_users != null) {
+      authorize_internal_users_select.value = String(
+        data.main.authorize_internal_users
+      );
+    }
   } catch (error) {
     console.error("Fetchエラー:", error);
   }
 }
-test();
+get_current_setting();

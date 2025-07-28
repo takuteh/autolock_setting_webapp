@@ -2,10 +2,13 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>JSON Fetch</title>
+    <title>Autolock Setting</title>
     <link rel="stylesheet" href="setting_notify.css" />
+    <link rel="stylesheet" href="header.css" />
   </head>
   <body>
+    <!-- ヘッダー -->
+    <div id="header-placeholder"></div>
     <h2>MQTT関連の設定</h2>
 
     <div id="setting_mqtt" class="setting_item">
@@ -21,6 +24,11 @@
 
       <div id="boot_message">
         <label>起動時に送信するメッセージ</label>
+        <input type="text" />
+      </div>
+
+      <div id="change_config_topic">
+        <label>設定変更を送信するトピック</label>
         <input type="text" />
       </div>
 
@@ -45,13 +53,23 @@
       </div>
       <script src="setting_notify.js"></script>
 
-      <div id="boot_topic">
-        <label>リレーのリセット時に送信するトピック</label>
+      <div id="relay_on_topic">
+        <label>モーターオフ時に送信するトピック</label>
         <input type="text" />
       </div>
 
-      <div id="boot_message">
-        <label>リレーのリセットに送信するメッセージ</label>
+      <div id="relay_on_message">
+        <label>モーターオフ時に送信するメッセージ</label>
+        <input type="text" />
+      </div>
+
+      <div id="relay_off_topic">
+        <label>モーターオン時に送信するトピック</label>
+        <input type="text" />
+      </div>
+
+      <div id="relay_off_message">
+        <label>モーターオン時に送信するメッセージ</label>
         <input type="text" />
       </div>
 
@@ -106,5 +124,9 @@
         </div>
       </div>
     </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="common.js"></script>
   </body>
 </html>
