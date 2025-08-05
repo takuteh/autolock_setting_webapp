@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Autolock Setting</title>
+    <link rel="stylesheet" href="BASE_URL/webapp/common/header.css" />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <div id="header-placeholder"></div>
+    <div id="setting_user">
+      <table>
+        <thread>
+          <tr>
+            <th>識別ID</th>
+            <th>ユーザー名</th>
+            <th>LINE_ID</th>
+            <th>Slack_ID</th>
+            <th>有効期間（開始）</th>
+            <th>有効期間（終了）</th>
+          </tr>
+        </thread>
+        <tbody id="user-table-body"></tbody>
+      </table>
+    </div>
+
+    <button id="addBtn">追加</button>
+
+    <div class="btn">
+      <button id="reset_button">リセット</button>
+      <button id="apply_button">適用</button>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="setting_user.js"></script>
+    <script src="BASE_URL/webapp/common/common.js"></script>
+  </body>
+</html>

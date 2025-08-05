@@ -1,8 +1,6 @@
 async function get_current_setting() {
   try {
-    const response = await fetch(
-      "https://margarita.shacknet.us/takumi_test/235/webapp/get"
-    );
+    const response = await fetch("https://margarita.shacknet.us/takumi_test/235/webapp_end/get");
     const data = await response.json();
     console.log(data);
 

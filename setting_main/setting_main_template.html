@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Autolock Setting</title>
+    <link rel="stylesheet" href="setting_main.css" />
+    <link rel="stylesheet" href="BASE_URL/webapp/common/header.css" />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <div id="header-placeholder"></div>
+
+    <div id="wrapper">
+      <div id="setting_main">
+        <div class="setting_item" id="autolock">
+          <label>オートロック</label>
+          <select>
+            <option value="true">有効</option>
+            <option value="false">無効</option>
+          </select>
+        </div>
+
+        <div class="setting_item" id="timeout_seq">
+          <label>タイムアウト秒数</label>
+          <input type="text" />
+        </div>
+
+        <div class="setting_item" id="rotate_direction">
+          <label>解錠時の回転方向</label>
+          <select>
+            <option value="right">右</option>
+            <option value="left">左</option>
+          </select>
+        </div>
+
+        <div class="setting_item" id="ignore_clsw">
+          <label>ドア開時の閉ボタン</label>
+          <select>
+            <option value="true">有効</option>
+            <option value="false">無効</option>
+          </select>
+        </div>
+
+        <div class="setting_item" id="authorize_external_users">
+          <label>外部からの通信の認証</label>
+          <select>
+            <option value="true">有効</option>
+            <option value="false">無効</option>
+          </select>
+        </div>
+
+        <div class="setting_item" id="authorize_internal_users">
+          <label>内部からの通信の認証</label>
+          <select>
+            <option value="true">有効</option>
+            <option value="false">無効</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="btn">
+        <button id="rst_btn">リセット</button>
+        <button id="apply_btn">適用</button>
+      </div>
+
+      <div id="footer-placeholder"></div>
+
+      <script src="setting_main.js"></script>
+      <script src="BASE_URL/webapp/common/common.js"></script>
+    </div>
+  </body>
+</html>

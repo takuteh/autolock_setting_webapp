@@ -1,5 +1,3 @@
-//const { DefaultMessageIdProvider } = require("mqtt");
-
 const add_btn = document.getElementById("addBtn");
 const reset_button = document.getElementById("reset_button");
 const apply_button = document.getElementById("apply_button");
@@ -55,16 +53,13 @@ apply_button.addEventListener("click", async () => {
   });
 
   try {
-    const response = await fetch(
-      "https://margarita.shacknet.us/takumi_test/235/webapp/users/post",
-      {
-        method: "POST", // 必要に応じて PUT や PATCH
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dataToSend),
-      }
-    );
+    const response = await fetch("https://margarita.shacknet.us/takumi_test/235/webapp_end/users/post", {
+      method: "POST", // 必要に応じて PUT や PATCH
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataToSend),
+    });
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -86,9 +81,7 @@ add_btn.addEventListener("click", () => {
 
 async function fetchAndRender() {
   try {
-    const response = await fetch(
-      "https://margarita.shacknet.us/takumi_test/235/webapp/users/get"
-    );
+    const response = await fetch("https://margarita.shacknet.us/takumi_test/235/webapp_end/users/get");
     const users = await response.json();
 
     users.forEach((user) => {

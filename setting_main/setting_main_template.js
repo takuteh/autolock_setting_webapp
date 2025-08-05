@@ -23,16 +23,13 @@ apply.addEventListener("click", async () => {
     console.log(new_settings);
 
     try {
-      const response = await fetch(
-        "https://margarita.shacknet.us/takumi_test/235/webapp/post",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(new_settings),
-        }
-      );
+      const response = await fetch("BASE_URL/webapp_end/post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(new_settings),
+      });
 
       if (response.ok) {
         alert("設定を適用しました");
@@ -49,9 +46,7 @@ apply.addEventListener("click", async () => {
 
 async function get_current_setting() {
   try {
-    const response = await fetch(
-      "https://margarita.shacknet.us/takumi_test/235/webapp/get"
-    );
+    const response = await fetch("BASE_URL/webapp_end/get");
     const data = await response.json();
     console.log(data);
 

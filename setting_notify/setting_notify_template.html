@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Autolock Setting</title>
+    <link rel="stylesheet" href="setting_notify.css" />
+    <link rel="stylesheet" href="BASE_URL/webapp/common/header.css" />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <div id="header-placeholder"></div>
+    <h2>MQTT関連の設定</h2>
+
+    <div id="setting_mqtt" class="setting_item">
+      <div id="broker_address">
+        <label>ブローカーip</label>
+        <input type="text" />
+      </div>
+
+      <div id="boot_topic">
+        <label>起動時に送信するトピック</label>
+        <input type="text" />
+      </div>
+
+      <div id="boot_message">
+        <label>起動時に送信するメッセージ</label>
+        <input type="text" />
+      </div>
+
+      <div id="change_config_topic">
+        <label>設定変更を送信するトピック</label>
+        <input type="text" />
+      </div>
+
+      <div id="open_topic">
+        <label>解錠時に送信するトピック</label>
+        <input type="text" />
+      </div>
+
+      <div id="open_message">
+        <label>解錠時に送信するメッセージ</label>
+        <input type="text" />
+      </div>
+
+      <div id="close_topic">
+        <label>施錠時に送信するトピック</label>
+        <input type="text" />
+      </div>
+
+      <div id="close_message">
+        <label>施錠時に送信するメッセージ</label>
+        <input type="text" />
+      </div>
+      <script src="setting_notify.js"></script>
+
+      <div id="relay_on_topic">
+        <label>モーターオフ時に送信するトピック</label>
+        <input type="text" />
+      </div>
+
+      <div id="relay_on_message">
+        <label>モーターオフ時に送信するメッセージ</label>
+        <input type="text" />
+      </div>
+
+      <div id="relay_off_topic">
+        <label>モーターオン時に送信するトピック</label>
+        <input type="text" />
+      </div>
+
+      <div id="relay_off_message">
+        <label>モーターオン時に送信するメッセージ</label>
+        <input type="text" />
+      </div>
+
+      <div id="mqtt_port">
+        <label>送受信に使用するポート</label>
+        <input type="number" />
+      </div>
+    </div>
+
+    <div id="setting_send_app">
+      <div id="line" class="setting_item">
+        <h2>LINE</h2>
+        <div>
+          <label>通知</label>
+          <select>
+            ]
+            <option value="enable">有効</option>
+            <option value="disable">無効</option>
+          </select>
+        </div>
+
+        <div>
+          <label>トークン</label>
+          <input type="text" />
+        </div>
+
+        <div>
+          <label>送信対象のユーザー</label>
+          <button>追加</button>
+        </div>
+      </div>
+
+      <div id="slack" class="setting_item">
+        <h2>slack</h2>
+        <div>
+          <label>通知</label>
+          <select>
+            ]
+            <option value="enable">有効</option>
+            <option value="disable">無効</option>
+          </select>
+        </div>
+
+        <div>
+          <label>トークン</label>
+          <input type="text" />
+        </div>
+
+        <div>
+          <label>送信対象のチャンネル</label>
+          <button>追加</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="BASE_URL/webapp/common/common.js"></script>
+    <script src="setting_notify.js"></script>
+  </body>
+</html>
