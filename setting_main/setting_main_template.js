@@ -8,6 +8,7 @@ apply.addEventListener("click", async () => {
   const apply_ok = confirm("設定を適用して再始動します");
   if (apply_ok) {
     const new_settings = {
+      main: {
       autolock: document.querySelector("#autolock select").value,
       timeout_seq: document.querySelector("#timeout_seq input").value,
       rotate_direction: document.querySelector("#rotate_direction select")
@@ -19,6 +20,7 @@ apply.addEventListener("click", async () => {
       authorize_internal_users: document.querySelector(
         "#authorize_internal_users select"
       ).value,
+    }
     };
     console.log(new_settings);
 
